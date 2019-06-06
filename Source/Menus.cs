@@ -18,7 +18,22 @@ namespace Source
 
         public void Display()
         {
-            ((IMenu)menus.Peek()).Display();
+            CurrentMenu().Display();
+        }
+
+        public void HandleInput()
+        {
+            CurrentMenu().HandleInput();
+        }
+
+        public bool Empty()
+        {
+            return menus.Count == 0;
+        }
+
+        private IMenu CurrentMenu()
+        {
+            return ((IMenu)menus.Peek());
         }
     }
 }

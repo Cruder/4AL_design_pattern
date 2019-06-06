@@ -23,7 +23,7 @@ namespace Source
 
         public void Display()
         {
-            Console.WriteLine("==== MAIN MENU ====\n1 - Play\n 2 - Exit");
+            Console.WriteLine("==== MAIN MENU ====\n1 - Play\n2 - Exit");
         }
 
         public void HandleInput()
