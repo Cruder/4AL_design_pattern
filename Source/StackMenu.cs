@@ -2,9 +2,9 @@ using System;
 
 namespace Source
 {
-    public class StackMenu : IMenu
+    public abstract class StackMenu : IMenu
     {
-        Menus stackMenus;
+        public Menus stackMenus;
 
         public StackMenu(Menus stackMenus)
         {
@@ -26,16 +26,7 @@ namespace Source
             Console.WriteLine("==== MAIN MENU ====\n1 - Play\n2 - Exit");
         }
 
-        public void HandleInput()
-        {
-            if(true)
-            {
-                // Exit
-                PopMenu();
-            } else
-            {
-                //
-            }
-        }
+        public abstract void HandleInput();
+        
     }
 }
