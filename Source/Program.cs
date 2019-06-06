@@ -6,7 +6,14 @@ namespace Source
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Menus menu = new Menus();
+            menu.PushMenu(new StackMenu(menu));
+
+            while(!menu.Empty())
+            {
+                menu.Display();
+                menu.HandleInput();
+            }
         }
 
         public int Test()
