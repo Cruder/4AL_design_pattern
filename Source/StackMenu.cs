@@ -21,10 +21,7 @@ namespace Source
             return stackMenus.PopMenu();
         }
 
-        public void Display()
-        {
-            Console.WriteLine("==== MAIN MENU ====\n1 - Play\n2 - Exit");
-        }
+        public abstract void Display();
 
         public abstract void HandleInput();
         

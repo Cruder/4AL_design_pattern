@@ -35,10 +35,5 @@ namespace Source
         {
             return ((IMenu)menus.Peek());
         }
-
-        public void HandleInput(){
-            ((IMenu)menus.Peek()).HandleInput();
-        }
-
     }
 }

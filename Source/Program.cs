@@ -7,7 +7,7 @@ namespace Source
         static void Main(string[] args)
         {
             Menus menu = new Menus();
-            menu.PushMenu(new StackMenu(menu));
+            menu.PushMenu(new MainMenu(menu));
 
             while(!menu.Empty())
             {
