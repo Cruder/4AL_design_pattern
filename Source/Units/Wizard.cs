@@ -4,7 +4,7 @@ namespace Source{
         private int health;
         private const int atkDamages = 10;
         public Wizard(){
-            this.health = 5;
+            this.health = 7;
         }
 
         public void ReceiveDamages(int damages){
