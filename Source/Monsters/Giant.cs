@@ -1,22 +1,36 @@
+using System;
+
 namespace Source
 {
-    namespace Monsters
+    public class Giant : IMonster
     {
-        public class Giant : IMonster
+        int lives;
+        IBehaviourManager behaviourManager;
+
+        public Giant(IBehaviourManager behaviourManager)
         {
-            public int Damages()
-            {
-                return 1;
-            }
+            this.lives = 10;
+            this.behaviourManager = behaviourManager;
+        }
 
-            public void ReceiveDamages(int damages)
-            {
-            }
+        public int Damages()
+        {
+            return CurrentState().Damages();
+        }
 
-            public bool Alive()
-            {
-                return true;
-            }
+        public void ReceiveDamages(int damages)
+        {
+            this.lives -= CurrentState().ReceiveDamages(damages);
+        }
+
+        public bool Alive()
+        {
+            return this.lives > 0;
+        }
+
+        private IBehaviour CurrentState()
+        {
+            return behaviourManager.CurrentState(lives);
         }
     }
 }
