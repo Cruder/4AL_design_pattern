@@ -19,4 +19,5 @@ namespace Source {
         public bool Alive(){
             return this.health > 0;
         }
+    }
 }
