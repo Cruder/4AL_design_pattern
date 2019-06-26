@@ -10,7 +10,26 @@ namespace Source
 
         public override void Display()
         {
-            Console.WriteLine("==== Game MENU ====\n 1 - Build unit\n 2 - Build Ressources\n 3 - Ressources unit\n 4 - Attack\n 5 - Quit");
+            Console.WriteLine(
+                "==== City State ====\n" +
+                "==Available==\n" +
+                " - Knights : \n" +
+                " - Archers : \n" +
+                " - Wizards : \n" +
+                "==Building==\n" +
+                " - Knights : \n" +
+                " - Archers : \n" +
+                " - Wizards : \n" +
+                "==Resources==\n" +
+                " - Gold : \n" +
+                " - Wood : \n" +
+                "==Dead==\n" +
+                "==== Game MENU ====\n"+
+                 "1 - Build unit\n" +
+                 "2 - Build Ressources\n" +
+                 "3 - Ressources unit\n" +
+                 "4 - Attack\n"+
+                 "5 - Quit");
         }
 
         public override void HandleInput()

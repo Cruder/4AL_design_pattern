@@ -9,7 +9,7 @@ namespace Source{
                 arr[i] = new Archer();
             }
             Army army = new Army(arr);
-            return army;
+            return army;//TODO : retourne un array de commande --> faire les commandes qui dure le temps des tours
         }
     }
 }
