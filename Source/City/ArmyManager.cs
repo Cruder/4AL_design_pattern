@@ -19,6 +19,5 @@ namespace Source{
         public void CreateArcherArmy(int archers){
             this.unitStack.Push(new ArcherArmyFabric().createArmy(archers));
         }
-
     }
 }
