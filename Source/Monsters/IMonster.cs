@@ -8,5 +8,7 @@ namespace Source
         bool Alive();
         int Damages();
         void ReceiveDamages(int damages);
+        int Distance();
+        string Name();
     }
 }

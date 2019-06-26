@@ -8,7 +8,7 @@ namespace Source{
 
         public override void Display()
         {
-            Console.WriteLine("======= BATTLE 4AL ========\n\n\n==== MAIN MENU ====\n1 - Play\n 2 - Exit");
+            Console.WriteLine("======= Mob Battle ========\n\n\n==== MAIN MENU ====\n1 - Play\n2 - Exit");
         }
 
         public override void HandleInput()

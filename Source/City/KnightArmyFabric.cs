@@ -6,7 +6,7 @@ namespace Source{
         public KnightArmyFabric(){
             
         }
-        public Army createArmy(int n){
+        public Army CreateArmy(int n){
             IUnit[] arr = new IUnit[n];            
             for(int i = 0; i < n; i++){
                 arr[i] = new Knight();

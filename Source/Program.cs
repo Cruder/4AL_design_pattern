@@ -6,7 +6,7 @@ namespace Source
     {
         static void Main(string[] args)
         {
-            Menus menu = new Menus();
+            Menus menu = new Menus(new Game());
             menu.PushMenu(new MainMenu(menu));
 
             while(!menu.Empty())
@@ -22,5 +22,3 @@ namespace Source
         }
     }
 }
-
-//https://prod.liveshare.vsengsaas.visualstudio.com/join?7F4952070B3F53432A62D8FA0200F91BFD16

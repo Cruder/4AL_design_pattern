@@ -21,6 +21,11 @@ namespace Source
             return stackMenus.PopMenu();
         }
 
+        public Game CurrentGame()
+        {
+            return stackMenus.Game();
+        }
+
         public abstract void Display();
 
         public abstract void HandleInput();

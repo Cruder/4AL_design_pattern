@@ -8,16 +8,16 @@ namespace Source{
             this.quantity = 0;
         }
 
-        public void consume(int amount){
+        public void Consume(int amount){
             this.quantity -= amount;
         }
-        public void produce(){
+        public void Produce(){
             this.quantity += PRODUCTIVITY;
         }
-        public int getAmount(){
+        public int GetAmount(){
             return this.quantity;
         }
-        public bool isLow(){
+        public bool IsLow(){
             return(this.quantity < 10);
         }
     }

@@ -1,8 +1,8 @@
 namespace Source{
     public interface IResources{
-        void consume(int amount);
-        void produce();
-        int getAmount();
-        bool isLow();
+        void Consume(int amount);
+        void Produce();
+        int GetAmount();
+        bool IsLow();
     }
 }

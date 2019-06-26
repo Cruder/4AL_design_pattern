@@ -7,7 +7,7 @@ namespace Source
     {
         Queue<IExpeditionStep> steps;
 
-        Expedition()
+        public Expedition()
         {
             this.steps = new Queue<IExpeditionStep>();
         }

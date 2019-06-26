@@ -2,22 +2,24 @@ using System.Collections.Generic;
 
 namespace Source{
     public class ArmyManager{
-        private Stack<Army> unitStack = new  Stack<Army>();
+        private List<Army> unitStack = new  List<Army>();
 
         public ArmyManager(){
 
         }
 
         public void CreateWizardsArmy(int wizards){
-            this.unitStack.Push(new WizardArmyFabric().createArmy(wizards));
+            this.unitStack.Add(new WizardArmyFabric().CreateArmy(wizards));
         }
 
         public void CreateKnightsArmy(int knights){
-            this.unitStack.Push(new KnightArmyFabric().createArmy(knights));
+            this.unitStack.Add(new KnightArmyFabric().CreateArmy(knights));
         }
 
         public void CreateArcherArmy(int archers){
-            this.unitStack.Push(new ArcherArmyFabric().createArmy(archers));
+            this.unitStack.Add(new ArcherArmyFabric().CreateArmy(archers));
         }
+
+        
     }
 }
