@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 
-namespace Source{
+namespace Source
+{
     public class WizardArmyFabric : IArmyFabric
     {
-        public Army CreateArmy(int n){
-            IUnit[] arr = new IUnit[n];            
+        public Army CreateArmy(int n)
+        {
+            IUnit[] arr = new IUnit[n];
             for(int i = 0; i < n; i++){
                 arr[i] = new Wizard();
             }

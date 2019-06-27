@@ -1,18 +1,20 @@
 using System.Collections.Generic;
 
-namespace Source{
-    public class Game{
+namespace Source
+{
+    public class Game
+    {
         private int turn;
         private List<IMonster> monsters = new List<IMonster>();
         private City city = new City();
 
-        public Game() 
+        public Game()
         {
             this.turn = 0;
             var monsterSetup = new MonsterSetup(monsters);
-            monsterSetup.Setup();            
+            monsterSetup.Setup();
         }
-        
+
         public City GetCity(){
             return city;
         }
@@ -21,7 +23,5 @@ namespace Source{
         {
             return monsters;
         }
-
-        
     }
 }

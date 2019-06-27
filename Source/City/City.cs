@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 
-namespace Source{
-    public class City{
+namespace Source
+{
+    public class City
+    {
         private ArmyManager armies;
         private Gold gold;
         private Food food;

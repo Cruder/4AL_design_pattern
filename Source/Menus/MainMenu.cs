@@ -1,7 +1,9 @@
 using System;
 
-namespace Source{
-    public class MainMenu : StackMenu{
+namespace Source
+{
+    public class MainMenu : StackMenu
+{
         public MainMenu(Menus stackMenus) : base(stackMenus)
         {
         }
@@ -15,9 +17,9 @@ namespace Source{
         {
             string choice = Console.ReadLine();
             switch(choice){
-                case "1" : PushMenu(new GameMenu(stackMenus)); 
+                case "1" : PushMenu(new GameMenu(stackMenus));
                     break;
-                case "2" : PopMenu(); 
+                case "2" : PopMenu();
                     break;
 
                 default : Display();
