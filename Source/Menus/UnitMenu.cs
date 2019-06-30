@@ -15,17 +15,28 @@ namespace Source
 
         public override void HandleInput()
         {
+            int nbr;
             string choice = Console.ReadLine();
+            City city = CurrentGame().GetCity();
             ArmyManager build = CurrentGame().GetCity().GetArmies();
             switch(choice){
                 case "1" :
-                    build.CreateArcherArmy(unitNumber());
+                    nbr = unitNumber();
+                    city.SetGold(new Gold(city.GetGold().GetAmount()-nbr));
+                    city.SetFood(new Food(city.GetFood().GetAmount()-10*nbr));
+                    build.CreateArcherArmy(nbr);
                     break;
                 case "2" :
-                    build.CreateKnightsArmy(unitNumber());
+                    nbr = unitNumber();
+                    city.SetGold(new Gold(city.GetGold().GetAmount()-nbr));
+                    city.SetFood(new Food(city.GetFood().GetAmount()-5*nbr));
+                    build.CreateKnightsArmy(nbr);
                     break;
                 case "3" :
-                    build.CreateWizardsArmy(unitNumber());
+                    nbr = unitNumber();
+                    city.SetGold(new Gold(city.GetGold().GetAmount()-nbr*2));
+                    city.SetFood(new Food(city.GetFood().GetAmount()-12*nbr));
+                    build.CreateWizardsArmy(nbr);
                     break;
                 case "4" : PopMenu();
                     break;

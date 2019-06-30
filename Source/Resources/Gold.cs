@@ -11,6 +11,10 @@ namespace Source
             this.quantity = 0;
         }
 
+        public Gold(int i){
+            this.quantity = i;
+        }
+
         public void Consume(int amount)
         {
             this.quantity -= amount;
