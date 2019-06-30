@@ -6,7 +6,7 @@ namespace Source
     {
         int duration;
 
-        Travel(int duration)
+        public Travel(int duration)
         {
             this.duration = duration;
         }

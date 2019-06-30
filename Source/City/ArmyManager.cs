@@ -4,7 +4,7 @@ namespace Source
 {
     public class ArmyManager
     {
-        private List<Army> unitStack = new List<Army>();
+        private List<IUnit> unitStack = new List<IUnit>();
 
         public void CreateWizardsArmy(int wizards)
         {
@@ -19,6 +19,21 @@ namespace Source
         public void CreateArcherArmy(int archers)
         {
             this.unitStack.Add(new ArcherArmyFabric().CreateArmy(archers));
+        }
+
+        public IUnit[] ExportUnits()
+        {
+            var units = unitStack.ToArray();
+            unitStack.Clear();
+            return units;
+        }
+
+        public void ImportUnits(IUnit[] units)
+        {
+            foreach(var unit in units)
+            {
+                unitStack.Add(unit);
+            }
         }
     }
 }

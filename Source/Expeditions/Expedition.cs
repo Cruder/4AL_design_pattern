@@ -12,7 +12,7 @@ namespace Source
             this.steps = new Queue<IExpeditionStep>();
         }
 
-        void AddStep(IExpeditionStep step)
+        public void AddStep(IExpeditionStep step)
         {
             this.steps.Enqueue(step);
         }

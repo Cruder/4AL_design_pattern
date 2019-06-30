@@ -32,6 +32,13 @@ namespace Source
                     if(int.TryParse(choice, out choiceNumber) && choiceNumber >= 0 && choiceNumber < CurrentGame().MonsterList().Count)
                     {
                         var monster = CurrentGame().MonsterList()[choiceNumber];
+                        var army = CurrentGame().GetCity().GetArmies().ExportUnits();
+
+                        var expedition = new Expedition();
+                        expedition.AddStep(new Travel(monster.Distance()));
+                        expedition.AddStep(new Battle(new Army(army), monster));
+                        expedition.AddStep(new Travel(monster.Distance()));
+
                         PopMenu();
                     }
                     else

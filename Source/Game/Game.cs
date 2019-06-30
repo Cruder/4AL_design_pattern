@@ -7,6 +7,7 @@ namespace Source
         private int turn;
         private List<IMonster> monsters = new List<IMonster>();
         private City city = new City();
+        private Expeditions expeditions = new Expeditions();
 
         public Game()
         {
@@ -18,6 +19,7 @@ namespace Source
         public void Turn()
         {
             city.Turn();
+            expeditions.Turn();
         }
 
         public City GetCity()

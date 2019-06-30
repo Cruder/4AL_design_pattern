@@ -8,7 +8,8 @@ namespace Source
         private Gold gold;
         private Food food;
 
-        public City(){
+        public City()
+        {
             this.armies = new ArmyManager();
             this.gold = new Gold();
             this.food = new Food();
@@ -23,19 +24,28 @@ namespace Source
         public Gold GetGold(){
             return gold;
         }
+
         public Food GetFood(){
             return food;
         }
-        public ArmyManager GetArmies(){
+
+        public ArmyManager GetArmies()
+        {
             return armies;
         }
-        public void SetGold(Gold gold){
+
+        public void SetGold(Gold gold)
+        {
             this.gold=gold;
         }
-        public void SetFood(Food food){
+
+        public void SetFood(Food food)
+        {
             this.food=food;
         }
-        public void SetArmies(ArmyManager armies){
+
+        public void SetArmies(ArmyManager armies)
+        {
             this.armies=armies;
         }
     }
