@@ -6,11 +6,15 @@ namespace Source
     {
         int lives;
         IBehaviourManager behaviourManager;
+        int distance;
+        string name;
 
-        public Giant(IBehaviourManager behaviourManager)
+        public Giant(IBehaviourManager behaviourManager, int distance, string name)
         {
             this.lives = 10;
             this.behaviourManager = behaviourManager;
+            this.distance = distance;
+            this.name = name;
         }
 
         public int Damages()
@@ -27,6 +31,16 @@ namespace Source
         {
             return this.lives > 0;
         }
+
+        public int Distance()
+        {
+            return distance;
+        }
+
+        public String Name()
+        {
+            return name;
+        } 
 
         private IBehaviour CurrentState()
         {

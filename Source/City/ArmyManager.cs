@@ -1,23 +1,39 @@
 using System.Collections.Generic;
 
-namespace Source{
-    public class ArmyManager{
-        private Stack<Army> unitStack = new  Stack<Army>();
+namespace Source
+{
+    public class ArmyManager
+    {
+        private List<IUnit> unitStack = new List<IUnit>();
 
-        public ArmyManager(){
-
+        public void CreateWizardsArmy(int wizards)
+        {
+            this.unitStack.Add(new WizardArmyFabric().CreateArmy(wizards));
         }
 
-        public void CreateWizardsArmy(int wizards){
-            this.unitStack.Push(new WizardArmyFabric().createArmy(wizards));
+        public void CreateKnightsArmy(int knights)
+        {
+            this.unitStack.Add(new KnightArmyFabric().CreateArmy(knights));
         }
 
-        public void CreateKnightsArmy(int knights){
-            this.unitStack.Push(new KnightArmyFabric().createArmy(knights));
+        public void CreateArcherArmy(int archers)
+        {
+            this.unitStack.Add(new ArcherArmyFabric().CreateArmy(archers));
         }
 
-        public void CreateArcherArmy(int archers){
-            this.unitStack.Push(new ArcherArmyFabric().createArmy(archers));
+        public IUnit[] ExportUnits()
+        {
+            var units = unitStack.ToArray();
+            unitStack.Clear();
+            return units;
+        }
+
+        public void ImportUnits(IUnit[] units)
+        {
+            foreach(var unit in units)
+            {
+                unitStack.Add(unit);
+            }
         }
     }
 }

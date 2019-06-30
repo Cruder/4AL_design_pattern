@@ -16,18 +16,18 @@ namespace Source
         public override void HandleInput()
         {
             string choice = Console.ReadLine();
-            ArmyManager build = new ArmyManager();
+            ArmyManager build = CurrentGame().GetCity().GetArmies();
             switch(choice){
-                case "1" : 
+                case "1" :
                     build.CreateArcherArmy(unitNumber());
                     break;
-                case "2" : 
+                case "2" :
                     build.CreateKnightsArmy(unitNumber());
                     break;
-                case "3" : 
+                case "3" :
                     build.CreateWizardsArmy(unitNumber());
                     break;
-                case "4" : PopMenu(); 
+                case "4" : PopMenu();
                     break;
 
                 default : this.Display();

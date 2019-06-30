@@ -10,22 +10,29 @@ namespace Source
 
         public override void Display()
         {
-            Console.WriteLine("==== Game MENU ====\n 1 - Build unit\n 2 - Build Ressources\n 3 - Ressources unit\n 4 - Attack\n 5 - Quit");
+            Console.WriteLine(
+                "==== City State ====\n" +
+                "==Resources==\n" +
+                " - Gold : " + this.CurrentGame().GetCity().GetGold().GetAmount() + "\n" +
+                " - Wood : " + this.CurrentGame().GetCity().GetFood().GetAmount() + "\n" +
+                "==== Game MENU ====\n"+
+                 "1 - Build unit\n" +
+                 "2 - Attack\n" +
+                 "3 - Next turn\n" +
+                 "-1 - Quit");
         }
 
         public override void HandleInput()
         {
             string choice = Console.ReadLine();
             switch(choice){
-                case "1" : PushMenu(new UnitMenu(stackMenus)); 
+                case "1" : PushMenu(new UnitMenu(stackMenus));
                     break;
-                // case "2" : PushMenu(); 
-                //     break;
-                // case "3" : PushMenu(); 
-                //     break;
-                // case "4" : PushMenu(); 
-                //     break;
-                case "5" : PopMenu(); 
+                case "2" : PushMenu(new ExpeditionMenu(stackMenus));
+                    break;
+                case "3" : this.CurrentGame().Turn();
+                    break;
+                case "-1" : PopMenu();
                     break;
 
                 default : this.Display();

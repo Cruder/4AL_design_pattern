@@ -5,6 +5,12 @@ namespace Source
     public class Menus
     {
         Stack menus = new Stack();
+        Game game;
+
+        public Menus(Game game)
+        {
+            this.game = game;
+        }
 
         public void PushMenu(IMenu menu)
         {
@@ -29,6 +35,11 @@ namespace Source
         public bool Empty()
         {
             return menus.Count == 0;
+        }
+
+        public Game Game()
+        {
+            return game;
         }
 
         private IMenu CurrentMenu()

@@ -4,7 +4,7 @@ namespace Source
     {
         int activationThreshold;
 
-        WoundedGiant(int activationThreshold)
+        public WoundedGiant(int activationThreshold)
         {
             this.activationThreshold = activationThreshold;
         }

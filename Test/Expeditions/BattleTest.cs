@@ -11,7 +11,7 @@ namespace Test
         {
             IBehaviour[] behaviours = new IBehaviour[] { new HealthyGiant(0) };
             IBehaviourManager manager = new GiantBehaviourManager(behaviours);
-            return new Giant(manager);
+            return new Giant(manager, 0, "Tester");
         }
 
         [TestMethod]
