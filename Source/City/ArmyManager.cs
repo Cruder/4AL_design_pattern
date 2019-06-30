@@ -4,12 +4,7 @@ namespace Source
 {
     public class ArmyManager
     {
-        private List<Army> unitStack = new  List<Army>();
-
-        public ArmyManager()
-        {
-
-        }
+        private List<Army> unitStack = new List<Army>();
 
         public void CreateWizardsArmy(int wizards)
         {

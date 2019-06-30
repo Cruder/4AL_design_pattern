@@ -14,6 +14,12 @@ namespace Source
             this.food = new Food();
         }
 
+        public void Turn()
+        {
+            gold.Produce();
+            food.Produce();
+        }
+
         public Gold GetGold(){
             return gold;
         }

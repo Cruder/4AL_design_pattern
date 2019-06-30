@@ -15,7 +15,13 @@ namespace Source
             monsterSetup.Setup();
         }
 
-        public City GetCity(){
+        public void Turn()
+        {
+            city.Turn();
+        }
+
+        public City GetCity()
+        {
             return city;
         }
 

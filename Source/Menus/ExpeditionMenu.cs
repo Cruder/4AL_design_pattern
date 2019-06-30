@@ -15,19 +15,39 @@ namespace Source
                 "==== Expedition Menu ====\n" +
                 "-- Monster List --\n" +
                 Monsters() +
-                ""
+                "\n-1 - Quit"
             );
         }
 
         public override void HandleInput()
         {
+            string choice = Console.ReadLine();
+            switch(choice)
+            {
+                case "-1" : PopMenu();
+                    break;
+                default :
+                    int choiceNumber;
+                    Console.WriteLine($"{choice}, {int.TryParse(choice, out choiceNumber)}");
+                    if(int.TryParse(choice, out choiceNumber) && choiceNumber >= 0 && choiceNumber < CurrentGame().MonsterList().Count)
+                    {
+                        var monster = CurrentGame().MonsterList()[choiceNumber];
+                        PopMenu();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid choice.\n");
+                        this.Display();
+                    }
+                    break;
+            }
         }
 
         private String Monsters()
         {
             var monsters = CurrentGame().MonsterList();
             return monsters
-                .Select((monster, index) => "{0} [{1}] - {2}")
+                .Select((monster, index) => $"{index} [{monster.Distance()}] - {monster.Name()}")
                 .Aggregate((current, next) => current + "\n" + next);
         }
     }
