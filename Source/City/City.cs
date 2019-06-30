@@ -21,11 +21,13 @@ namespace Source
             food.Produce();
         }
 
-        public Gold GetGold(){
+        public Gold GetGold()
+        {
             return gold;
         }
 
-        public Food GetFood(){
+        public Food GetFood()
+        {
             return food;
         }
 
