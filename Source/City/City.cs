@@ -48,7 +48,7 @@ namespace Source
 
         public void SetArmies(ArmyManager armies)
         {
-            this.armies=armies;
+            this.armies = armies;
         }
     }
 }

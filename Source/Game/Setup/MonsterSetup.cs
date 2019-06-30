@@ -1,26 +1,26 @@
 using System.Collections.Generic;
 
-namespace Source 
+namespace Source
 {
     public class MonsterSetup : ISetup
     {
-        List<IMonster> monsters;
+        Monsters monsters;
 
-        public MonsterSetup(List<IMonster> monsters)
+        public MonsterSetup(Monsters monsters)
         {
             this.monsters = monsters;
         }
 
         public void Setup()
         {
-            this.monsters.Add(SetupGiant(5, "Rocko"));
-            this.monsters.Add(SetupGiant(10, "Flurdy"));
+            this.monsters.AddMonster(SetupGiant(5, "Rocko"));
+            this.monsters.AddMonster(SetupGiant(10, "Flurdy"));
         }
 
         private IMonster SetupGiant(int distance, string name)
         {
-            var behaviours = new IBehaviour[] { 
-                new HealthyGiant(50), 
+            var behaviours = new IBehaviour[] {
+                new HealthyGiant(50),
                 new WoundedGiant(0)
             };
             var manager = new GiantBehaviourManager(behaviours);
