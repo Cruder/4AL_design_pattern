@@ -37,5 +37,10 @@ namespace Source
         {
             return monsters.ToList();
         }
+
+        public bool Finished()
+        {
+            return monsters.IsEmpty();
+        }
     }
 }

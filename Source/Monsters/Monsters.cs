@@ -19,18 +19,17 @@ namespace Source
 
         public void Turn()
         {
-            foreach(var monster in monsters)
-            {
-                Console.WriteLine($"Monster {monster.Name()} is alive? {monster.Alive()}");
-
-            }
-
             monsters.RemoveAll(monster => !monster.Alive());
         }
 
         public List<IMonster> ToList()
         {
             return monsters;
+        }
+
+        public bool IsEmpty()
+        {
+            return monsters.Count == 0;
         }
     }
 }

@@ -31,6 +31,11 @@ namespace Source
                 case "2" : PushMenu(new ExpeditionMenu(stackMenus));
                     break;
                 case "3" : this.CurrentGame().Turn();
+                    if(this.CurrentGame().Finished())
+                    {
+                        PopMenu();
+                        PushMenu(new WinMenu(stackMenus));
+                    }
                     break;
                 case "-1" : PopMenu();
                     break;
