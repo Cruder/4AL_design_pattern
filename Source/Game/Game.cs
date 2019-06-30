@@ -22,6 +22,11 @@ namespace Source
             expeditions.Turn();
         }
 
+        public void AddExpedition(Expedition expedition)
+        {
+            expeditions.AddExpedition(expedition);
+        }
+
         public City GetCity()
         {
             return city;

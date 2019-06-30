@@ -34,10 +34,13 @@ namespace Source
                         var monster = CurrentGame().MonsterList()[choiceNumber];
                         var army = CurrentGame().GetCity().GetArmies().ExportUnits();
 
-                        var expedition = new Expedition();
-                        expedition.AddStep(new Travel(monster.Distance()));
-                        expedition.AddStep(new Battle(new Army(army), monster));
-                        expedition.AddStep(new Travel(monster.Distance()));
+                        var builder = new ExpeditionBuilder(
+                            monster,
+                            new Army(army),
+                            CurrentGame().GetCity()
+                        );
+                        builder.AddTravel().AddBattle().BackHome();
+                        CurrentGame().AddExpedition(builder.Release());
 
                         PopMenu();
                     }
